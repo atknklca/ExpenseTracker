@@ -1,14 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragment.HomePageFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="125dp"
+        android:layout_margin="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_view_background">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textViewMerhaba"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/merhaba"
+                    android:textColor="@color/secondaryTextColor"
+                    />
+
+                <TextView
+                    android:id="@+id/textViewKullaniciIsmi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/kullaniciIsmi"
+                    android:textColor="@color/secondaryTextColor"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp"
+                android:gravity="end"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+
+                <TextView
+                    android:id="@+id/textViewHarcamaniz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/harcamaniz"
+                    android:textColor="@color/secondaryTextColor"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textViewHarcamaTutari"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/harcama_tutari"
+                    android:layout_gravity="center"
+                    android:textColor="@color/secondaryTextColor"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/linearKur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/cardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonTl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="@string/tl"
+            app:cornerRadius="20dp"
+            android:textColor="@color/grey"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="2dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSterlin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="@string/sterlin"
+            app:cornerRadius="20dp"
+            android:textColor="@color/grey"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="2dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonEuro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="@string/euro"
+            app:cornerRadius="20dp"
+            android:textColor="@color/grey"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="2dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonDolar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="@string/dolar"
+            app:cornerRadius="20dp"
+            android:textColor="@color/grey"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="2dp"
+            />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearKur"
+         />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/buttonEkle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="@string/ekle"
+        app:icon="@drawable/ic_baseline_add_24"
+        android:textColor="@color/secondaryTextColor"
+        android:backgroundTint="@color/primaryColor"
+        app:iconTint="@color/secondaryTextColor"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,4 +2,18 @@
     <string name="app_name">ExpenseTracker</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="merhaba">Merhaba</string>
+    <string name="kullaniciIsmi" />
+    <string name="harcamaniz">Harcamanız</string>
+    <string name="harcama_tutari">0</string>
+    <string name="tl">TL</string>
+    <string name="sterlin">STERLIN</string>
+    <string name="euro">EURO</string>
+    <string name="dolar">DOLAR</string>
+    <string name="ekle">Ekle</string>
+    <string name="expense_image_icon">Expense Image Icon</string>
+    <string name="kira">Kira</string>
+    <string name="ba_l_k">Başlık</string>
+    <string name="baslik">Başlık</string>
+    <string name="fiyat_tl">0 TL</string>
 </resources>
