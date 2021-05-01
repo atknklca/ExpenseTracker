@@ -16,4 +16,9 @@
     <string name="ba_l_k">Başlık</string>
     <string name="baslik">Başlık</string>
     <string name="fiyat_tl">0 TL</string>
+    <string name="isim_degistir">İsim Değiştir</string>
+    <string name="isminizi_giriniz">İsminizi Giriniz</string>
+    <string name="belirtmek_istemiyorum">Belirtmek İstemiyorum</string>
+    <string name="kadin">Kadın</string>
+    <string name="erkek">Erkek</string>
 </resources>

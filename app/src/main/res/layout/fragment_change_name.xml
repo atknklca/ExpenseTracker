@@ -1,14 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragment.ChangeNameFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textChangeName"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:boxBackgroundColor="@color/white"
+        android:enabled="false">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/isim_degistir"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-</FrameLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textChangeName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="80dp"
+        android:hint="@string/isminizi_giriniz"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="@color/primaryColor"
+        app:boxStrokeWidth="2dp"
+        app:hintTextColor="@color/primaryColor"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:checkedButton="@+id/radioButtonBelirsiz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/inputName"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="40dp"
+        app:buttonTint="@color/primaryColor"
+        >
+
+        <RadioButton
+            android:id="@+id/radioButtonErkek"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/erkek"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonKadin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/kadin"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonBelirsiz"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/belirtmek_istemiyorum"/>
+    </RadioGroup>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/buttonSaveName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        android:layout_margin="50dp"
+        android:gravity="center"
+        android:text="@string/ekle"
+        android:textColor="@color/secondaryTextColor"
+        android:backgroundTint="@color/primaryColor"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

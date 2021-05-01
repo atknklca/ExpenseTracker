@@ -36,5 +36,18 @@
         android:id="@+id/homePageFragment"
         android:name="com.example.expensetracker.ui.fragment.HomePageFragment"
         android:label="fragment_home_page"
-        tools:layout="@layout/fragment_home_page" />
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePageFragment_to_changeNameFragment2"
+            app:destination="@id/changeNameFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeNameFragment2"
+        android:name="com.example.expensetracker.ui.fragment.ChangeNameFragment"
+        android:label="fragment_change_name"
+        tools:layout="@layout/fragment_change_name" >
+        <action
+            android:id="@+id/action_changeNameFragment2_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
 </navigation>
