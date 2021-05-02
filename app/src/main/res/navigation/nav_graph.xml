@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_homePageFragment_to_changeNameFragment2"
             app:destination="@id/changeNameFragment2" />
+        <action
+            android:id="@+id/action_homePageFragment_to_addExpenseFragment"
+            app:destination="@id/addExpenseFragment" />
     </fragment>
     <fragment
         android:id="@+id/changeNameFragment2"
@@ -50,4 +53,9 @@
             android:id="@+id/action_changeNameFragment2_to_homePageFragment"
             app:destination="@id/homePageFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/addExpenseFragment"
+        android:name="com.example.expensetracker.ui.fragment.AddExpenseFragment"
+        android:label="fragment_add_expense"
+        tools:layout="@layout/fragment_add_expense" />
 </navigation>

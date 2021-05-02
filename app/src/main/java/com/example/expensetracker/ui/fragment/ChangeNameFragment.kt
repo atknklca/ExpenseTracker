@@ -28,13 +28,14 @@ class ChangeNameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var gender : Int? = null
+        var gender : Int? = 3
 
         binding.radioGroup.setOnCheckedChangeListener { radioGroup, id ->
             gender = when(id){
                 R.id.radioButtonErkek -> { 1 }
                 R.id.radioButtonKadin -> { 2 }
-                else -> { 3 }
+                R.id.radioButtonBelirsiz -> { 3 }
+                else -> { -1 }
             }
         }
 
@@ -45,7 +46,7 @@ class ChangeNameFragment : Fragment() {
                 val sharedPref = requireActivity().getSharedPreferences("Name", Context.MODE_PRIVATE)
 
                 val editor = sharedPref.edit()
-                editor.putString("Name", name)
+                editor.putString("name", name)
                 editor.putInt("gender",gender!!)
                 editor.apply()
 
