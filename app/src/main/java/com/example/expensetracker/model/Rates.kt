@@ -1,8 +1,6 @@
 package com.example.expensetracker.model
 
-import java.util.function.DoubleBinaryOperator
-
-data class post(
+data class Rates(
     val TRY: Double,
     val GBP: Double,
     val EUR: Double,

@@ -9,14 +9,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.expensetracker.R
 import com.example.expensetracker.databinding.FragmentHomePageBinding
+import com.example.expensetracker.util.Constants
+import com.example.expensetracker.util.Constants.base
+import com.example.expensetracker.viewmodel.CurrencyViewModel
 
 class HomePageFragment : Fragment() {
 
     private lateinit var binding : FragmentHomePageBinding
     private lateinit var sharedPref: SharedPreferences
+    private lateinit var currencyViewModel: CurrencyViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,9 +37,11 @@ class HomePageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         sharedPref = requireActivity().getSharedPreferences("Name", Context.MODE_PRIVATE)
+        currencyViewModel = ViewModelProvider(this).get(CurrencyViewModel::class.java)
 
         checkedName(sharedPref)
         checkedMoneyType(sharedPref)
+        checkedRates(currencyViewModel)
 
         binding.layoutMerhaba.setOnClickListener{
         findNavController().navigate(R.id.action_homePageFragment_to_changeNameFragment2)
@@ -63,6 +70,18 @@ class HomePageFragment : Fragment() {
             changeColor(it as Button)
             changeLastClicked(sharedPref,4)
         }
+    }
+
+    private fun checkedRates(currencyViewModel: CurrencyViewModel) {
+        currencyViewModel.getRates(base).observe(viewLifecycleOwner,{
+            val tr = it.rates.TRY
+            val gbp = it.rates.GBP
+            val usd = it.rates.USD
+
+            //println("tr:"+tr)
+            //println("gdp:"+gbp)
+            //println("usd:"+usd)
+        })
     }
 
     private fun checkedMoneyType(sharedPref: SharedPreferences) {
