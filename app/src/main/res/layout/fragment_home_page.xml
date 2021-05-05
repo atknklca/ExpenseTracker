@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragment.HomePageFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="match_parent"
-        android:layout_height="125dp"
-        android:layout_margin="15dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearKur"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -36,8 +38,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/merhaba"
-                    android:textColor="@color/secondaryTextColor"
-                    />
+                    android:textColor="@color/secondaryTextColor" />
 
                 <TextView
                     android:id="@+id/textViewKullaniciIsmi"
@@ -52,13 +53,12 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginEnd="20dp"
                 android:gravity="end"
-                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                >
+                app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
                     android:id="@+id/textViewHarcamaniz"
@@ -72,9 +72,9 @@
                     android:id="@+id/textViewHarcamaTutari"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginTop="4dp"
                     android:text="@string/harcama_tutari"
-                    android:layout_gravity="center"
                     android:textColor="@color/secondaryTextColor"
                     android:textSize="20sp" />
 
@@ -84,89 +84,91 @@
 
     <LinearLayout
         android:id="@+id/linearKur"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp"
         android:layout_marginHorizontal="5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="460dp"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/cardView"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/buttonEkle"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonTl"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:text="@string/tl"
-            app:cornerRadius="20dp"
-            android:textColor="@color/grey"
-            android:layout_weight="1"
             android:layout_marginHorizontal="1dp"
-            />
+            android:layout_weight="1"
+            android:text="@string/tl"
+            android:textColor="@color/grey"
+            app:cornerRadius="20dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonSterlin"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:text="@string/sterlin"
-            app:cornerRadius="20dp"
-            android:textColor="@color/grey"
-            android:layout_weight="1"
             android:layout_marginHorizontal="1dp"
-            />
+            android:layout_weight="1"
+            android:text="@string/sterlin"
+            android:textColor="@color/grey"
+            app:cornerRadius="20dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonEuro"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:text="@string/euro"
-            app:cornerRadius="20dp"
-            android:textColor="@color/grey"
-            android:layout_weight="1"
             android:layout_marginHorizontal="1dp"
-            />
+            android:layout_weight="1"
+            android:text="@string/euro"
+            android:textColor="@color/grey"
+            app:cornerRadius="20dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonDolar"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:text="@string/dolar"
-            app:cornerRadius="20dp"
-            android:textColor="@color/grey"
-            android:layout_weight="1"
             android:layout_marginHorizontal="1dp"
-            />
+            android:layout_weight="1"
+            android:text="@string/dolar"
+            android:textColor="@color/grey"
+            app:cornerRadius="20dp" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="10dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="9dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearKur"
-         />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearKur" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/buttonEkle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/primaryColor"
         android:gravity="center"
         android:text="@string/ekle"
-        app:icon="@drawable/ic_baseline_add_24"
         android:textColor="@color/secondaryTextColor"
-        android:backgroundTint="@color/primaryColor"
+        app:icon="@drawable/ic_baseline_add_24"
         app:iconTint="@color/secondaryTextColor"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearKur" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,4 +22,11 @@
     <string name="kadin">Kadın</string>
     <string name="erkek">Erkek</string>
     <string name="kaydet">Kaydet</string>
+    <string name="harcama_ekle">Harcama Ekle</string>
+    <string name="aciklama">Açıklama</string>
+    <string name="harcama">Harcama</string>
+    <string name="fatura">Fatura</string>
+    <string name="diger">Diğer (Alışveriş vb.)</string>
+    <string name="detay">Detay</string>
+    <string name="sil">SİL</string>
 </resources>

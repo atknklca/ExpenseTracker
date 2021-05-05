@@ -43,7 +43,7 @@ class ChangeNameFragment : Fragment() {
             if (binding.inputName.editText?.text.toString().isNotEmpty() && binding.radioGroup.checkedRadioButtonId != -1){
 
                 val name = binding.inputName.editText?.text.toString()
-                val sharedPref = requireActivity().getSharedPreferences("Name", Context.MODE_PRIVATE)
+                val sharedPref = requireActivity().getSharedPreferences("MyShared", Context.MODE_PRIVATE)
 
                 val editor = sharedPref.edit()
                 editor.putString("name", name)
