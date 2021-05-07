@@ -22,7 +22,7 @@ class AddExpenseFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentAddExpenseBinding.inflate(inflater,container,false)
         val view = binding.root
@@ -37,7 +37,7 @@ class AddExpenseFragment : Fragment() {
         var expenseType: Int? = null
         var currencyType : Int? = null
 
-        binding.radioGroupExpense.setOnCheckedChangeListener { radioGroup, i ->
+        binding.radioGroupExpense.setOnCheckedChangeListener { radioGroupExpenseType, i ->
             expenseType = when(i){
                 R.id.radioButtonReceipt -> 1
                 R.id.radioButtonHome -> 2
@@ -45,7 +45,7 @@ class AddExpenseFragment : Fragment() {
             }
         }
 
-        binding.radioGroupCurrency.setOnCheckedChangeListener { radioGroup, i ->
+        binding.radioGroupCurrency.setOnCheckedChangeListener { radioGroupCurrenyType, i ->
             currencyType = when(i){
                 R.id.radioButtonTl -> 1
                 R.id.radioButtonSterlin -> 2

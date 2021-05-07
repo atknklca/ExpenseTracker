@@ -30,7 +30,7 @@ class ChangeNameFragment : Fragment() {
 
         var gender : Int? = 3
 
-        binding.radioGroup.setOnCheckedChangeListener { radioGroup, id ->
+        binding.radioGroup.setOnCheckedChangeListener { radioGroupGender, id ->
             gender = when(id){
                 R.id.radioButtonErkek -> { 1 }
                 R.id.radioButtonKadin -> { 2 }

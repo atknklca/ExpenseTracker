@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ExpenseTracker</string>
+    <string name="app_name">EX-KER</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="merhaba">Merhaba</string>
@@ -29,4 +29,15 @@
     <string name="diger">Diğer (Alışveriş vb.)</string>
     <string name="detay">Detay</string>
     <string name="sil">SİL</string>
+    <string name="expense_tracker">Expense Tracker</string>
+    <string name="next">Next</string>
+    <string name="ileri">ileri</string>
+    <string name="bitir">Bitir</string>
+    <string name="first_screen_text">Artık karışıklılığa son deme vakti!</string>
+    <string name="first_screen_title">Karşınızda Expense Tracker Uygulaması</string>
+    <string name="second_screen_title">Kolayca Kategorilendir</string>
+    <string name="second_screen_text">Harcamalarınızı kategorileyerek daha kolay takip edin!</string>
+    <string name="third_screen_title">Farklı Para Birimleriyle Takip Et</string>
+    <string name="third_screen_text">Harcamalarınızı TL, Dolar, Euro, Sterlin para birimleriyle sürekli güncellenen kurla takip edin!</string>
+    <string name="full">full</string>
 </resources>

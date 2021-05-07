@@ -17,12 +17,76 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="150dp"
         app:lottie_rawRes="@raw/invoice"/>
+    <TextView
+        android:id="@+id/textviewFirstTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="22sp"
+        android:textColor="@color/secondaryColor"
+        style="@style/Widget.MaterialComponents.TextView"
+        android:shadowColor="@color/primaryColor"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="2"
+        app:layout_constraintTop_toBottomOf="@id/animationViewSplash"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/first_screen_title"
+        android:fontFamily="@font/indie_flower_regular"/>
+    <TextView
+        android:id="@+id/textviewFirstText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:textColor="@color/primaryDarkColor"
+        style="@style/Widget.MaterialComponents.TextView"
+        android:shadowColor="@color/secondaryColor"
+        android:layout_marginHorizontal="5dp"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="2"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/textviewFirstTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/first_screen_text"
+        android:fontFamily="@font/indie_flower_regular"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textviewFirstText">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/full"
+            android:src="@drawable/circle_full"
+            app:tint="@color/secondaryLightColor" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/full"
+            android:src="@drawable/circle_empty"
+            app:tint="@color/secondaryLightColor" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/full"
+            android:src="@drawable/circle_empty"
+            app:tint="@color/secondaryLightColor" />
+
+    </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next "
+        android:text="@string/ileri"
         app:icon="@drawable/ic_baseline_navigate_next_24"
         app:iconGravity="end"
         app:iconPadding="0dp"
@@ -30,7 +94,6 @@
         android:textSize="20sp"
         android:layout_margin="20dp"
         app:strokeWidth="2dp"
-
         app:strokeColor="?attr/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
