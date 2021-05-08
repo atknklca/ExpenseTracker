@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         app:lottie_rawRes="@raw/financial"/>
 
     <TextView
@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textSize="22sp"
+        android:gravity="center"
         android:textColor="@color/secondaryColor"
         style="@style/Widget.MaterialComponents.TextView"
         android:shadowColor="@color/primaryColor"
