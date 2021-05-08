@@ -12,79 +12,75 @@ class Functions {
             1 ->{   //tl olarak kaydedilmiş fiyatların dönüşümleri
                 when(presentItem.currencyType){ //dönüşümü yapılacak olan para birimine göre hesaplamalar
 
-                    1->{    //tl - dönüşüm yapılmaz
+                    1->{    //tl to tl
                         return convertPrice(0,0,presentPrice,list)
-                        // holder.itemBinding.textViewPrice.text = "${DecimalFormat("##.#").format(presentPrice)} TL"
                     }
                     2->{    //sterlin to try
                         return convertPrice(1,0,presentPrice,list)
                         //  val result = (1.0/list[1])*list[0]*presentPrice.toDouble()
-                        //  holder.itemBinding.textViewPrice.text = "${DecimalFormat("##.#").format(result)} TL"
                     }
                     3->{    //usd to try
                         return convertPrice(2,0,presentPrice,list)
                         // val result = (1/list[2])*list[0]*presentPrice.toDouble()
-                        // holder.itemBinding.textViewPrice.text = "${DecimalFormat("##.#").format(result)} TL"
                     }
                     4->{    //eur to try
                         return convertPrice(3,0,presentPrice,list)
                         // val result = (1/list[3])*list[0]*presentPrice.toDouble()
-                        //  holder.itemBinding.textViewPrice.text = "${DecimalFormat("##.#").format(result)} TL"
                     } else -> return "error"
 
                 }
             }
-            2 -> {
+            2 -> {  //sterlin olarak kaydedilmiş fiyatların dönüşümleri
                 when(presentItem.currencyType){
-                    1->{
+                    1->{    //tl to sterlin
                         return convertPrice(0,1,presentPrice,list)
                     }
-                    2->{    //sterlin to try
+                    2->{    //sterlin to sterlin
                         return convertPrice(1,1,presentPrice,list)
                     }
-                    3->{    //usd to try
+                    3->{    //euro to sterlin
                         return convertPrice(2,1,presentPrice,list)
                     }
-                    4->{    //eur to try
+                    4->{    //dolar to sterlin
                         return convertPrice(3,1,presentPrice,list)
                     }
                     else ->return "error"
                 }}
-            3 ->{
+            3 ->{   //euro olarak kaydedilmiş fiyatların dönüşümleri
                 when(presentItem.currencyType){
-                    1->{    //tl - dönüşüm yapılmaz
-                        return convertPrice(0,2,presentPrice,list)
-                    }
-                    2->{    //sterlin to try
-                        return convertPrice(1,2,presentPrice,list)
-                    }
-                    3->{    //usd to try
-                        return convertPrice(2,2,presentPrice,list)
-                    }
-                    4->{    //eur to try
-                        return convertPrice(3,2,presentPrice,list)
-                    }
-                    else ->return "error"
-                }
-            }
-            4 ->{
-                when(presentItem.currencyType){
-                    1->{    //tl - dönüşüm yapılmaz
+                    1->{    //tl to euro
                         return convertPrice(0,3,presentPrice,list)
                     }
-                    2->{    //sterlin to try
+                    2->{    //sterlin to euro
                         return convertPrice(1,3,presentPrice,list)
                     }
-                    3->{    //usd to try
+                    3->{    //euro to euro
                         return convertPrice(2,3,presentPrice,list)
                     }
-                    4->{    //eur to try
+                    4->{    //dolar to euro
                         return convertPrice(3,3,presentPrice,list)
                     }
                     else -> return "error"
                 }
 
-            } else -> return "error"
+            }
+            4 ->{   //dolar olarak kaydedilmiş fiyatların dönüşümleri
+            when(presentItem.currencyType){
+                1->{    //tl to dolar
+                    return convertPrice(0,2,presentPrice,list)
+                }
+                2->{    //sterlin to dolar
+                    return convertPrice(1,2,presentPrice,list)
+                }
+                3->{    //euro to dolar
+                    return convertPrice(2,2,presentPrice,list)
+                }
+                4->{    //dolar to dolar
+                    return convertPrice(3,2,presentPrice,list)
+                }
+                else ->return "error"
+            }
+        }  else -> return "error"
 
         }
     }
@@ -110,19 +106,19 @@ class Functions {
         for (presentItem in expenseList){
             when(moneyType) {
 
-                1 -> {   //tl olarak kaydedilmiş fiyatların dönüşümleri
-                    when (presentItem.currencyType) { //dönüşümü yapılacak olan para birimine göre hesaplamalar
+                1 -> {
+                    when (presentItem.currencyType) {
 
-                        1 -> {    //tl - dönüşüm yapılmaz
+                        1 -> {
                             totalPrice += convertPriceDouble(0, 0, presentItem.expensePrice,moneyList)
                         }
-                        2 -> {    //sterlin to try
+                        2 -> {
                             totalPrice += convertPriceDouble(1, 0, presentItem.expensePrice,moneyList)
                         }
-                        3 -> {    //usd to try
+                        3 -> {
                             totalPrice += convertPriceDouble(2, 0, presentItem.expensePrice,moneyList)
                         }
-                        4 -> {    //eur to try
+                        4 -> {
                             totalPrice += convertPriceDouble(3, 0, presentItem.expensePrice,moneyList)
                         }
                     }
@@ -132,21 +128,37 @@ class Functions {
                         1 -> {
                             totalPrice += convertPriceDouble(0, 1, presentItem.expensePrice,moneyList)
                         }
-                        2 -> {    //sterlin to try
+                        2 -> {
                             totalPrice += convertPriceDouble(1, 1, presentItem.expensePrice,moneyList)
                         }
-                        3 -> {    //usd to try
+                        3 -> {
                             totalPrice += convertPriceDouble(2, 1, presentItem.expensePrice,moneyList)                        }
-                        4 -> {    //eur to try
+                        4 -> {
                             totalPrice += convertPriceDouble(3, 1, presentItem.expensePrice,moneyList)                        }
                     }
                 }
                 3 -> {
                     when (presentItem.currencyType) {
-                        1 -> {    //tl - dönüşüm yapılmaz
+                        1 -> {
+                            totalPrice += convertPriceDouble(0, 3, presentItem.expensePrice,moneyList)
+                        }
+                        2 -> {
+                            totalPrice += convertPriceDouble(1, 3, presentItem.expensePrice,moneyList)
+                        }
+                        3 -> {
+                            totalPrice += convertPriceDouble(2, 3, presentItem.expensePrice,moneyList)
+                        }
+                        4 -> {
+                            totalPrice += convertPriceDouble(3, 3, presentItem.expensePrice,moneyList)
+                        }
+                    }
+                }
+                4 -> {
+                    when (presentItem.currencyType) {
+                        1 -> {
                             totalPrice += convertPriceDouble(0, 2, presentItem.expensePrice,moneyList)
                         }
-                        2 -> {    //sterlin to try
+                        2 -> {
                             totalPrice += convertPriceDouble(1, 2, presentItem.expensePrice,moneyList)
                         }
                         3 -> {    //usd to try
@@ -154,22 +166,6 @@ class Functions {
                         }
                         4 -> {    //eur to try
                             totalPrice += convertPriceDouble(3, 2, presentItem.expensePrice,moneyList)
-                        }
-                    }
-                }
-                4 -> {
-                    when (presentItem.currencyType) {
-                        1 -> {    //tl - dönüşüm yapılmaz
-                            totalPrice += convertPriceDouble(0, 3, presentItem.expensePrice,moneyList)
-                        }
-                        2 -> {    //sterlin to try
-                            totalPrice += convertPriceDouble(1, 3, presentItem.expensePrice,moneyList)
-                        }
-                        3 -> {    //usd to try
-                            totalPrice += convertPriceDouble(2, 3, presentItem.expensePrice,moneyList)
-                        }
-                        4 -> {    //eur to try
-                            totalPrice += convertPriceDouble(3, 3, presentItem.expensePrice,moneyList)
                         }
                     }
                 }

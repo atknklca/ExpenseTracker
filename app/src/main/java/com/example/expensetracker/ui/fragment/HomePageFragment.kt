@@ -1,5 +1,6 @@
 package com.example.expensetracker.ui.fragment
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.net.ConnectivityManager
@@ -9,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -34,13 +36,10 @@ class HomePageFragment : Fragment() {
     private lateinit var moneyList: ArrayList<Double>
     private lateinit var functions: Functions
 
-    private var sum: Double = 0.0
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentHomePageBinding.inflate(inflater,container, false)
         val view = binding.root
@@ -122,6 +121,7 @@ class HomePageFragment : Fragment() {
 
         }else{
 
+            Toast.makeText(requireActivity(),"İnternet Hizmetiniz Kullanılamıyor. Güncel Kur Değerleri İçin İnternet Erişimi Sağlayınız!",Toast.LENGTH_LONG).show()
             getRates(moneyList)
             loadAdapter(lastMoneyType,moneyList)
             showTotalPrice(lastMoneyType)
@@ -135,7 +135,7 @@ class HomePageFragment : Fragment() {
         sharedPref = requireActivity().getSharedPreferences("Rates",Context.MODE_PRIVATE)
 
         moneyList.clear()
-        moneyList.add(sharedPref.getFloat("tr",1.0F).toDouble())
+            moneyList.add(sharedPref.getFloat("tr",1.0F).toDouble())
         moneyList.add(sharedPref.getFloat("gdp",1.0F).toDouble())
         moneyList.add(sharedPref.getFloat("usd",1.0F).toDouble())
         moneyList.add(1.0)
@@ -153,9 +153,10 @@ class HomePageFragment : Fragment() {
 
     }
 
+    @SuppressLint("SetTextI18n")
     private fun showTotalPrice(moneyType: Int){
 
-       var sum : Double
+       val sum : Double
 
         getRates(moneyList)
         functions = Functions()
@@ -218,6 +219,7 @@ class HomePageFragment : Fragment() {
 
     }
 
+    @SuppressLint("SetTextI18n")
     private fun checkedName(sharedPref: SharedPreferences?) {
 
         val name = sharedPref?.getString("name","Lütfen Tıklayınız")
